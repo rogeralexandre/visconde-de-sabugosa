@@ -10,7 +10,7 @@ namespace Estudo01.Controllers
 {
     public class ProductsController : ApiController
     {
-        Product[] products = new Product[]
+        List<Product> Listproducts = new List<Product>
         {
             new Product { Id = 1, Name = "Fone de ouvido", Category = "Eletrônico", Price = 10 },
             new Product { Id = 2, Name = "Nexus 5X", Category = "Eletronico", Price = 345.7M },
@@ -19,12 +19,12 @@ namespace Estudo01.Controllers
 
         public IEnumerable<Product> GetAllProducts()
         {
-            return products;
+            return Listproducts;
         }
 
         public IHttpActionResult GetProduct(int id)
         {
-            var product = products.FirstOrDefault((p) => p.Id == id);
+            var product = Listproducts.FirstOrDefault((p) => p.Id == id);
             if (product == null)
             {
                 return NotFound();
@@ -32,5 +32,15 @@ namespace Estudo01.Controllers
             return Ok(product);
         }
 
+        public HttpResponseMessage PostProduct(Product item)
+        {
+            Listproducts.Add(item);
+     
+            var response = Request.CreateResponse<Product>(HttpStatusCode.Created, item);
+            string uri = Url.Link("DefaultApi", new { id = item.Id });
+            response.Headers.Location = new Uri(uri);
+
+            return response;
+        }
     }
 }
