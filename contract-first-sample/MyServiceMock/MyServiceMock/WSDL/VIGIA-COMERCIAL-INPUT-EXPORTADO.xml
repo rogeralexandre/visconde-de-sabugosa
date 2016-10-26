@@ -1,0 +1,2247 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://xmlns.example.com/VIGIACOMERCIALINPUT" xmlns:ns0="http://www.exampleURI.com/WSDL-VIGIA-COMERCIAL-Input" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="VIGIA-COMERCIAL-INPUT" targetNamespace="http://xmlns.example.com/VIGIACOMERCIALINPUT">
+    <wsdl:types>
+        <xs:schema xmlns:ns0="http://www.exampleURI.com/WSDL-VIGIA-COMERCIAL-Input" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.exampleURI.com/WSDL-VIGIA-COMERCIAL-Input">
+            <xs:element name="MaestroEscalasRequest">
+                <xs:complexType>
+                    <xs:annotation>
+                        <xs:documentation>Información sobre todas las escalas disponibles en Prosegur.</xs:documentation>
+                    </xs:annotation>
+                    <xs:sequence>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Operacion" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Posibles valores: UPSERT, DELETE. UPSERT se utiliza para informar de un alta del elemento a sincronizar o de una modificación sobre dicho elemento. DELETE se utiliza para informar de una baja física del registro.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Pais" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código del país del que viene la escala.(Ej. Argentina = 032)</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="NombreEscala" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Nombre de la escala</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Codigo" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código de la escala.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="unbounded" minOccurs="1" name="Empresa" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Listado de Códigos de las empresas a las que aplica la escala. Será el código en ERP de la empresa</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="TipoJornada" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Tipo de Jornada full time/part time (F,P)</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="UnidadEscala" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Unidad de la Escala, Horas/días(1,2)</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="NumDiasTrabajo" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Numero de dias que se trabajan.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="NumDiasTrabajo2" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Numero de dias que se trabajan.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="NumDiasLibres" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Numero de dias que se libran.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="NumDiasLibres2" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Numero de dias que se libran.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="HorasTotalesTrabajoXDia" type="xs:float">
+                            <xs:annotation>
+                                <xs:documentation>Número de horas totales de trabajo al día. El valor de este atributo se mostrará en formato horas y minutos (HH:MM).</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="HorasNormalesTrabajoXDiaTrabajado" type="xs:float">
+                            <xs:annotation>
+                                <xs:documentation>Número de horas de trabajo por día trabajado. Opcional.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="HorasExtra" type="xs:float">
+                            <xs:annotation>
+                                <xs:documentation>Horas Extra</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="HorasExtraTrabajoXDiaTrabajado" type="xs:float">
+                            <xs:annotation>
+                                <xs:documentation>Número de horas extra de trabajo por día trabajado. Opcional.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="PromedioHorasSemanales" type="xs:float">
+                            <xs:annotation>
+                                <xs:documentation>Promedio de horas semanales.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="PorcentajeHorasNormalesMensuales" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Porcentaje de horas normales mensuales.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="PorcentajeHorasExtraMensuales" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Porcentaje de horas extra mensuales.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="DescripcionObservaciones" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Descripción y/o observaciones.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="JornadaMarcoLegal" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Cuyos valores posibles será SI o NO (sólo Chile)</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="FechaInicioVigenciaEscala" type="xs:date">
+                            <xs:annotation>
+                                <xs:documentation>Fecha de inicio de vigencia de la escala</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="FechaFinVigenciaEscala" type="xs:date">
+                            <xs:annotation>
+                                <xs:documentation>Fecha de fin de vigencia de la escala</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Secuencial" type="xs:int">
+                            <xs:annotation>
+                                <xs:documentation>Identificador secuencial que sirve para sincronizar el orden de los mensajes entre el sistema emisor y el receptor</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="BolPrincipal" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>•	Identificación del tipo de Escala principal. Valores S/N Obligatorio en BRA</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="BolAlmorcista" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>valores S/N. Este atributo tendrá que ser obligatorio solo para Brasil</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="TipoComputo">
+                            <xs:annotation>
+                                <xs:documentation>valor agregado para ARG, valores posibles Dia, Semana, Mes</xs:documentation>
+                            </xs:annotation>
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="6"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="MaestroSubescalasRequest">
+                <xs:complexType>
+                    <xs:annotation>
+                        <xs:documentation>Información sobre todas las escalas disponibles en Prosegur.</xs:documentation>
+                    </xs:annotation>
+                    <xs:sequence>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Operacion" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Posibles valores: UPSERT, DELETE. UPSERT se utiliza para informar de un alta del elemento a sincronizar o de una modificación sobre dicho elemento. DELETE se utiliza para informar de una baja física del registro.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Pais" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código del país del que viene la subescala.(Ej. Argentina = 032)</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="NombreSubescala" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Nombre de la subescala</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Codigo" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código de la Subescala</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="EscalaDeLaQueExtiende" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código de la escala de la cuál extiende la subescala. ej.: Escala: 6x1x8  -&gt; Sub-Escala: 6x1x12.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="unbounded" minOccurs="1" name="Empresa" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Listado de Códigos de las empresas a las que aplica la escala. Será el código en ERP de la empresa</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="NumDiasTrabajo" type="xs:float">
+                            <xs:annotation>
+                                <xs:documentation>Numero de dias que se trabajan.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="NumDiasLibres" type="xs:float">
+                            <xs:annotation>
+                                <xs:documentation>Numero de dias que se libran.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="HorasNormalesTrabajoXDia" type="xs:float">
+                            <xs:annotation>
+                                <xs:documentation>Horas Normales de trabajo por día</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="HorasTotalesTrabajoXDia" type="xs:float">
+                            <xs:annotation>
+                                <xs:documentation>Número de horas totales de trabajo al día. El valor de este atributo se mostrará en formato horas y minutos (HH:MM).</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="HorasExtra" type="xs:float">
+                            <xs:annotation>
+                                <xs:documentation>Horas Extra.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="HorarioReducido" type="xs:float">
+                            <xs:annotation>
+                                <xs:documentation>Horario reducido</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="PromedioHorasSemanales" type="xs:float">
+                            <xs:annotation>
+                                <xs:documentation>Promedio de horas semanales</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="PorcentajeHorasNormalesMensuales" type="xs:float">
+                            <xs:annotation>
+                                <xs:documentation>Porcentaje de horas normales mensuales</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="PorcentajeHorasExtraMensuales" type="xs:float">
+                            <xs:annotation>
+                                <xs:documentation>Porcentaje de horas extra mensuales</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="DescripcionObservaciones" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Descripcion y/o observaciones</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="FechaInicioVigenciaSubescala" type="xs:date">
+                            <xs:annotation>
+                                <xs:documentation>Fecha de inicio de vigencia de la subescala</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="FechaFinVigenciaSubescala" type="xs:date">
+                            <xs:annotation>
+                                <xs:documentation>Fecha de fin de vigencia de la subescala</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Secuencial" type="xs:int">
+                            <xs:annotation>
+                                <xs:documentation>Identificador secuencial que sirve para sincronizar el orden de los mensajes entre el sistema emisor y el receptor</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="CalendarioClienteObjetivoRequest">
+                <xs:complexType>
+                    <xs:annotation>
+                        <xs:documentation>Información sobre el calendario del cliente objetivo (es el calendario que aplica a la hora de planificar servicios)</xs:documentation>
+                    </xs:annotation>
+                    <xs:sequence>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Operacion" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>(Posibles valores: Alta, Baja, Modificacion). Indica si se está informando de un nuevo día festivo para un cliente objetivo (Alta), se está modificando uno ya enviado (Modificación) o se está anulando un día festivo para un cliente objetivo (Baja).</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Pais" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código del pais que aplica al calendario. (Ej. Argentina = 032)</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="CodigoFeriado" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Indica el código del feriado tal como se ha enviado en el maestro de feriados</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Descripcion" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Descripción del feriado</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Fecha" type="xs:date">
+                            <xs:annotation>
+                                <xs:documentation>Fecha del feriado</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="CodigoCliente" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código del cliente</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="CodigoObjetivo" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Indica el código del objetivo tal como se ha enviado en el servicio de sincronización de objetivos</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="CodigoTipoDia" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código del tipo de dia. Definida en VIGIA la correspondencia de cada código con los posibles valores como Laborable, No laborable, Media jornada...</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="Estado" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Posibles valores: Activado/Desactivado. Indica si el registro que se envía en un upsert está activado (es un alta o modificación) o está desactivado (es una baja lógica)</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Secuencial" type="xs:int">
+                            <xs:annotation>
+                                <xs:documentation>Identificador secuencial que sirve para sincronizar el orden de los mensajes entre el sistema emisor y el receptor</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="ObjetivoSubterceroRequest">
+                <xs:complexType>
+                    <xs:annotation>
+                        <xs:documentation>Información de un Cliente Objetivo Subtercero perteneciente a un cliente</xs:documentation>
+                    </xs:annotation>
+                    <xs:sequence>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Operacion" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Posibles valores: UPSERT, DELETE. UPSERT se utiliza para informar de un alta del elemento a sincronizar o de una modificación sobre dicho elemento. DELETE se utiliza para informar de una baja física del registro.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Pais" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código del país del que viene el Objetivo Subtercero.(Ej. Argentina = 032)</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Codigo" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código identificativo del objetivo Subtercero. El objetivo Subtercero se define unívocamente mediante unión de este código con el de cliente, objetivo, punto de servicio y país.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="CodCliente" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>código del cliente al que pertenece el objetivo. Hace referencia al código enviado en el maestro de clientes</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="CodObjetivo" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código del cliente Objetivo al que pertenece</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="CodPuntoServicio" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código del punto de servicio al que pertenece</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="Nombre" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Nombre del objetivo Subtercero</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="FechaInicioVigencia" type="xs:date">
+                            <xs:annotation>
+                                <xs:documentation>Fecha inicio vigencia Objetivo Subtercero</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="FechaFinVigencia" type="xs:date">
+                            <xs:annotation>
+                                <xs:documentation>Fecha fin vigencia Objetivo Subtercero</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="Empresa" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Empresa que presta el servicio en ese objetivo Subtercero. Será el código en ERP de la empresa</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="Contratado" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Posibles valores: Sí/No. Pdte confirmar si esa información está contemplada mostrarla en Vigia. No aplica a Europa</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="CodSubterceroERP" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código del subtercero en el ERP de este subtercero (solo aplica a Latam)</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="TipoClasificacion" type="xs:int">
+                            <xs:annotation>
+                                <xs:documentation>Valores posibles: 1 (para RIF) / 2 (para esporádico)</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="PropiedadHorizontal" type="xs:boolean">
+                            <xs:annotation>
+                                <xs:documentation>0 No es propiedad horizontal, 1 Es propiedad horizontal, se usa para Uruguay</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Secuencial" type="xs:int">
+                            <xs:annotation>
+                                <xs:documentation>Identificador secuencial que sirve para sincronizar el orden de los mensajes entre el sistema emisor y el receptor</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="MaestroSectorRequest">
+                <xs:complexType>
+                    <xs:annotation>
+                        <xs:documentation>Información sobre los tipos de sectores/segmentos disponibles en VIGIA</xs:documentation>
+                    </xs:annotation>
+                    <xs:sequence>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Operacion" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Posibles valores: UPSERT, DELETE. UPSERT se utiliza para informar de un alta del elemento a sincronizar o de una modificación sobre dicho elemento. DELETE se utiliza para informar de una baja física del registro.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Pais" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código del país del que viene el sector/segmento</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Codigo" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código que identifica el Sector/Segmento</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="Descripcion" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Descripción del sector/segmento</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Secuencial" type="xs:int">
+                            <xs:annotation>
+                                <xs:documentation>Identificador secuencial que sirve para sincronizar el orden de los mensajes entre el sistema emisor y el receptor</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="Estado" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Posibles valores: Activado/Desactivado. Indica si el registro que se envía en un upsert está activado (es un alta o modificación) o está desactivado (es una baja lógica)</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="ListadoConceptosFacturacionOT">
+                <xs:complexType>
+                    <xs:annotation>
+                        <xs:documentation>Listado de Conceptos de facturación por OT</xs:documentation>
+                    </xs:annotation>
+                    <xs:sequence>
+                        <xs:element maxOccurs="1" minOccurs="1" name="NumConcepto" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Número de concepto que viene con el puesto</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="TipoConcepto" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Tipo del concepto, necesario para saber cómo calcular su valor</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Cantidad" type="xs:float">
+                            <xs:annotation>
+                                <xs:documentation>Cantidad de veces que aplica el concepto para esta OT</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="FechaInicio" type="xs:dateTime">
+                            <xs:annotation>
+                                <xs:documentation>Fecha y hora de inicio de del concepto</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="FechaFin" type="xs:dateTime">
+                            <xs:annotation>
+                                <xs:documentation>Fecha y hora de fin del concepto</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="MaestroServiciosRequest">
+                <xs:complexType>
+                    <xs:annotation>
+                        <xs:documentation>Información de los servicios que vende Prosegur</xs:documentation>
+                    </xs:annotation>
+                    <xs:sequence>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Operacion" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Posibles valores: UPSERT, DELETE. UPSERT se utiliza para informar de un alta del elemento a sincronizar o de una modificación sobre dicho elemento. DELETE se utiliza para informar de una baja física del registro.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Pais" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código del país para el que aplica el tipo de servicio</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Codigo" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código del tipo de servicio.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="Descripcion" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Descripción del tipo de servicio</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="Tipo" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Indica si el servicio es un material o no (Posibles valores: "Material", "")</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Secuencial" type="xs:int">
+                            <xs:annotation>
+                                <xs:documentation>Identificador secuencial que sirve para sincronizar el orden de los mensajes entre el sistema emisor y el receptor</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="Estado" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Posibles valores: Activado/Desactivado. Indica si el registro que se envía en un upsert está activado (es un alta o modificación) o está desactivado (es una baja lógica)</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="GrupoClienteRequest">
+                <xs:complexType>
+                    <xs:annotation>
+                        <xs:documentation>Información de un grupo cliente</xs:documentation>
+                    </xs:annotation>
+                    <xs:sequence>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Operacion" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Posibles valores: UPSERT, DELETE. UPSERT se utiliza para informar de un alta del elemento a sincronizar o de una modificación sobre dicho elemento. DELETE se utiliza para informar de una baja física del registro.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Pais" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código del país del Grupo Cliente.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Codigo" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código identificativo del Grupo Cliente.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="Nombre" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Nombre del Grupo Cliente.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="FechaInicioVigencia" type="xs:date">
+                            <xs:annotation>
+                                <xs:documentation>Fecha inicio vigencia Grupo Cliente. No disponible actualmente en SIP2000. Se enviará la fecha en que se cree en la BBDD de Comercial el Grupo Cliente</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="FechaFinVigencia" type="xs:date">
+                            <xs:annotation>
+                                <xs:documentation>Fecha fin vigencia Grupo Cliente. No disponible actualmente en SIP2000.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Secuencial" type="xs:int">
+                            <xs:annotation>
+                                <xs:documentation>Identificador secuencial que sirve para sincronizar el orden de los mensajes entre el sistema emisor y el receptor</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="Estado" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Posibles valores: Activado/Desactivado. Indica si el registro que se envía en un upsert está activado (es un alta o modificación) o está desactivado (es una baja lógica)</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="ListadoOtrosCostes">
+                <xs:complexType>
+                    <xs:annotation>
+                        <xs:documentation>Listado de otros costes aplicables a la OT</xs:documentation>
+                    </xs:annotation>
+                    <xs:sequence>
+                        <xs:element maxOccurs="1" minOccurs="1" name="OperacionOtrosCostes" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Operación a realizar sobre otros costes (únicamente se permiten Alta y Baja). Para realizar una modificación sobre un coste, se debe dar una baja (indicando la fecha fin) y posteriormente una alta</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Codigo" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código del coste</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="Concepto" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Concepto del coste</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="Cantidad" type="xs:decimal">
+                            <xs:annotation>
+                                <xs:documentation>Cantidad del coste</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="Division" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código de la división a la que aplica el coste</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="ValorUnitario" type="xs:decimal">
+                            <xs:annotation>
+                                <xs:documentation>Valor unitario del coste</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="Total" type="xs:decimal">
+                            <xs:annotation>
+                                <xs:documentation>Importe total del coste</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="FechaInicio" type="xs:dateTime">
+                            <xs:annotation>
+                                <xs:documentation>Fecha y hora de inicio de asignación del material</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="FechaFin" type="xs:dateTime">
+                            <xs:annotation>
+                                <xs:documentation>Fecha y hora de fin de aplicación del coste. En caso de que no tenga fecha de fin fijada no se informará</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="ListadoMaterialAuxiliarRecepcionOT">
+                <xs:complexType>
+                    <xs:annotation>
+                        <xs:documentation>Listado del material auxiliar para recepción de OT</xs:documentation>
+                    </xs:annotation>
+                    <xs:sequence>
+                        <xs:element maxOccurs="1" minOccurs="1" name="OperacionMaterial" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Operación a realizar sobre el material auxiliar (únicamente se permiten Alta y Baja). Para realizar una modificación sobre un material auxiliar, se debe dar una baja (indicando la fecha fin) y posteriormente una alta</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Codigo" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código del material auxiliar</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="Secuencial" type="xs:int">
+                            <xs:annotation>
+                                <xs:documentation>Código secuencial de la línea de servicio a la que está asociado (en caso de no estar asociado a una línea, no se informará)</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="Descripcion" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Descripción del material auxiliar (tipo, modelo)</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="Division" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código de la división a la que está asociado el material auxiliar</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="Coste" type="xs:decimal">
+                            <xs:annotation>
+                                <xs:documentation>Coste del material auxiliar</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="CosteAmortizacion" type="xs:decimal">
+                            <xs:annotation>
+                                <xs:documentation>Coste de amortización del material</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="Cantidad" type="xs:float">
+                            <xs:annotation>
+                                <xs:documentation>Cantidad del material auxiliar</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="Moneda" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Moneda en la que se indican los costes</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="TotalAmortizacion" type="xs:decimal">
+                            <xs:annotation>
+                                <xs:documentation>Importe total de amortización </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="Caracteristicas" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Caracteristicas del material auxiliar</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="Facturable" type="xs:boolean">
+                            <xs:annotation>
+                                <xs:documentation>Indica si es facturable al cliente</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="FechaInicio" type="xs:dateTime">
+                            <xs:annotation>
+                                <xs:documentation>Fecha y hora de inicio de asignación del material</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="FechaFin" type="xs:dateTime">
+                            <xs:annotation>
+                                <xs:documentation>Fecha y hora de fin de asignación del material. En caso de que no tenga fecha de fin fijada no se informará</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="ListadoInterlocutores">
+                <xs:complexType>
+                    <xs:annotation>
+                        <xs:documentation>Listado de interlocutores</xs:documentation>
+                    </xs:annotation>
+                    <xs:sequence>
+                        <xs:element maxOccurs="1" minOccurs="1" name="NombreYApellidos" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Nombre y apellidos del interlocutor</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Cargo" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Cargo que tiene el interlocutor</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Telefono" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Telefono del interlocutor</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Email" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Email del interlocutor</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Observaciones" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Otras Observaciones </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="VIGIAReply">
+                <xs:complexType>
+                    <xs:annotation>
+                        <xs:documentation>Respuesta del Web Service que envía la confirmación de recepción de la información a Comercial</xs:documentation>
+                    </xs:annotation>
+                    <xs:sequence>
+                        <xs:element maxOccurs="1" minOccurs="1" name="CodRespuesta" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código identificativo de la respuesta</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="DescRespuesta" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Descripción de la respuesta</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="MaestroDivisionesRequest">
+                <xs:complexType>
+                    <xs:annotation>
+                        <xs:documentation>Información de los tipos de servicio que vende Prosegur o de las divisiones de RRHH</xs:documentation>
+                    </xs:annotation>
+                    <xs:sequence>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Operacion" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Posibles valores: UPSERT, DELETE. UPSERT se utiliza para informar de un alta del elemento a sincronizar o de una modificación sobre dicho elemento. DELETE se utiliza para informar de una baja física del registro.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Pais" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código del país para el que aplica la división</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Codigo" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código de la división</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="Descripcion" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Descripción de la división</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Origen" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Sistema que envía la división. Los valores posibles son RRHH, COMERCIAL</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Secuencial" type="xs:int">
+                            <xs:annotation>
+                                <xs:documentation>Identificador secuencial que sirve para sincronizar el orden de los mensajes entre el sistema emisor y el receptor</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="Estado" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Posibles valores: Activado/Desactivado. Indica si el registro que se envía en un upsert está activado (es un alta o modificación) o está desactivado (es una baja lógica)</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="DivisionContable" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código de la división contable a la que equivale la división de RRHH o Comercial</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="TipoDivision" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="ListadoHorasPuesto">
+                <xs:complexType>
+                    <xs:annotation>
+                        <xs:documentation>Listado de tipos de horas por puesto (aplica a Latam)</xs:documentation>
+                    </xs:annotation>
+                    <xs:sequence>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Atributo" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Tipo de hora: Horas normales, Hora extra, etc</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Valor" type="xs:decimal">
+                            <xs:annotation>
+                                <xs:documentation>Número de horas de ese tipo que se han vendido</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Cantidad" type="xs:boolean">
+                            <xs:annotation>
+                                <xs:documentation>Cantidad de horas: Indicará si el tipo de hora aplica (1) o no (0) </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Precio" type="xs:decimal">
+                            <xs:annotation>
+                                <xs:documentation>Precio del tipo de hora</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="ListadoDireccion">
+                <xs:complexType>
+                    <xs:annotation>
+                        <xs:documentation>Listado de elementos que forman una dirección</xs:documentation>
+                    </xs:annotation>
+                    <xs:sequence>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Nombre" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Nombre del campo de dirección</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Valor" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Valor del campo de dirección</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="EstructuraProsegurRequest">
+                <xs:complexType>
+                    <xs:annotation>
+                        <xs:documentation>Información de un elemento de la Estructura Organizativa del Grupo Prosegur</xs:documentation>
+                    </xs:annotation>
+                    <xs:sequence>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Operacion" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Posibles valores: UPSERT, DELETE. UPSERT se utiliza para informar de un alta del elemento a sincronizar o de una modificación sobre dicho elemento. DELETE se utiliza para informar de una baja física del registro.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Pais" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código del País al que pertenece el elemento de la estructura</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Nivel" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Nivel de la estructura organizativa de Prosegur al que pertenece el elemento</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Codigo" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código identificativo del elemento de la estructura</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="Descripcion" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Nombre del elemento de la estructura organizativa</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="FechaInicioVigencia" type="xs:date">
+                            <xs:annotation>
+                                <xs:documentation>Fecha de inicio de vigencia del elemento de la estructura organizativa</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="FechaFinVigencia" type="xs:date">
+                            <xs:annotation>
+                                <xs:documentation>Fecha de fin de vigencia del elemento de la estructura organizativa</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="ElementoSuperior" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código del elemento del nivel superior de la estructura organizativa del que depende</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="TipoDivision" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Posibles valores VI (Vigilancia), TR(Transportes) y ¿otros? Tibco enviará a VIGIA los elementos con tipo de división VI o TR. Aplica a Europa</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Secuencial" type="xs:int">
+                            <xs:annotation>
+                                <xs:documentation>Identificador secuencial que sirve para sincronizar el orden de los mensajes entre el sistema emisor y el receptor</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="FechaInicioVigenciaNivelSuperior" type="xs:date">
+                            <xs:annotation>
+                                <xs:documentation>Fecha de inicio de vigencia de la relación con el elemento superior de la estructura organizativa</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="FechaFinVigenciaNivelSuperior" type="xs:date">
+                            <xs:annotation>
+                                <xs:documentation>Fecha de fin de vigencia de la relación con el elemento superior de la estructura organizativa</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="ListadoEstructuraProsegur">
+                <xs:complexType>
+                    <xs:annotation>
+                        <xs:documentation>Listado de elementos de la estructura organizativa de Prosegur</xs:documentation>
+                    </xs:annotation>
+                    <xs:sequence>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Nivel" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Nivel de la estructura Prosegur al que aplica.Debe referenciar al nivel enviado en el maestro de estructura prosegur.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Codigo" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código del elemento de la estructura Prosegur</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="ListadoCategoriasSalariales">
+                <xs:complexType>
+                    <xs:annotation>
+                        <xs:documentation>Listado de categorías salariales (Convenios)</xs:documentation>
+                    </xs:annotation>
+                    <xs:sequence>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Codigo" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código de la categoría salarial</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="ListadoConceptosFacturacionPuesto">
+                <xs:complexType>
+                    <xs:annotation>
+                        <xs:documentation>Listado de Conceptos de facturación por puesto</xs:documentation>
+                    </xs:annotation>
+                    <xs:sequence>
+                        <xs:element maxOccurs="1" minOccurs="1" name="NumConcepto" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Número de concepto que viene con el puesto</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="TipoConcepto" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Tipo del concepto, necesario para saber cómo calcular su valor</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="ListadoPagosExtrasPuesto">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="1" minOccurs="0" name="Indicador" type="xs:string"/>
+                        <xs:element maxOccurs="1" minOccurs="0" name="NumHoras" type="xs:string"/>
+                        <xs:element maxOccurs="1" minOccurs="0" name="FrecuenciaPago" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="ListadoPluses">
+                <xs:complexType>
+                    <xs:annotation>
+                        <xs:documentation>Listado de Beneficios/Pluses de la OT</xs:documentation>
+                    </xs:annotation>
+                    <xs:sequence>
+                        <xs:element maxOccurs="1" minOccurs="1" name="OperacionPlus" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Operación a realizar sobre el plus (únicamente se permiten Alta y Baja). Para realizar una modificación sobre un plus, se debe dar una baja (indicando la fecha fin) y posteriormente una alta</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Codigo" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código del plus. Hace referencia al código enviado en el maestro de conceptos a pagar al empleado</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="Secuencial" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código secuencial de la línea de servicio a la que está asociado (en caso de no estar asociado a una línea, no se informará)</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="Division" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código de la división a la que está asociado el plus</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="Descripcion" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Descripción del plus</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="Cantidad" type="xs:decimal">
+                            <xs:annotation>
+                                <xs:documentation>Cantidad del plus</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="ValorUnitario" type="xs:decimal">
+                            <xs:annotation>
+                                <xs:documentation>Valor unitario del plus</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="Total" type="xs:decimal">
+                            <xs:annotation>
+                                <xs:documentation>Total del plus</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="FechaInicio" type="xs:dateTime">
+                            <xs:annotation>
+                                <xs:documentation>Fecha y hora de inicio de asignación del plus</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="FechaFin" type="xs:dateTime">
+                            <xs:annotation>
+                                <xs:documentation>Fecha y hora de fin de asignación del plus. En caso de que no tenga fecha de fin fijada no se informará</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="Descuento" type="xs:decimal"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="ClienteRequest">
+                <xs:complexType>
+                    <xs:annotation>
+                        <xs:documentation>Información de un cliente perteneciente a un grupo cliente</xs:documentation>
+                    </xs:annotation>
+                    <xs:sequence>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Operacion" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Posibles valores: UPSERT, DELETE. UPSERT se utiliza para informar de un alta del elemento a sincronizar o de una modificación sobre dicho elemento. DELETE se utiliza para informar de una baja física del registro.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Pais" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código del país del Cliente.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Codigo" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código identificativo del Cliente</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="Nombre" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Nombre del Cliente</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="NombreLargo" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Nombre extendido del Cliente</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="FechaInicioVigencia" type="xs:date">
+                            <xs:annotation>
+                                <xs:documentation>Fecha inicio vigencia Cliente. En caso de no disponer el sistema de una fecha de inicio de vigencia, se usará la fecha de creación</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="FechaFinVigencia" type="xs:date">
+                            <xs:annotation>
+                                <xs:documentation>Fecha fin vigencia Cliente.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="CodigoGrupoCliente" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código de Grupo Cliente del que depende. Hace referencia al código enviado en el maestro de grupo cliente</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="NIF" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>NIF del Cliente</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" ref="ns0:ListadoDireccion">
+                            <xs:annotation>
+                                <xs:documentation>Dirección del cliente. En caso de que el valor del atributo Pais sea “Extranjero” Tibco no informará a Vigia la dirección</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="Ambito" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Indica si el cliente es local o estratégico. Será un campo informativo</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="SectorSegmento" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código del Sector o Segmento al que pertenece el cliente. Hace referencia al código enviado en el maestro de sector/segmento</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="SubSectorSegmento" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código del subSector o subSegmento al que pertenece el cliente.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="CodigoFiscalCliente" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código Fiscal del Cliente (no tiene por qué coincidir con el NIF)</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="Categorizacion" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Categorización a medida por volumen de facturación del cliente</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="CodTerceroERP" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código del tercero en el ERP de este cliente</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Secuencial" type="xs:int">
+                            <xs:annotation>
+                                <xs:documentation>Identificador secuencial que sirve para sincronizar el orden de los mensajes entre el sistema emisor y el receptor</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="Estado" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Posibles valores: Activado/Desactivado. Indica si el registro que se envía en un upsert está activado (es un alta o modificación) o está desactivado (es una baja lógica)</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="TipoCliente" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="InstitucionFinanciera" type="xs:boolean">
+                            <xs:annotation>
+                                <xs:documentation>Indica si el cliente es una institución financiera o no</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="ObjetivoRequest">
+                <xs:complexType>
+                    <xs:annotation>
+                        <xs:documentation>Información de un Cliente Objetivo perteneciente a un cliente</xs:documentation>
+                    </xs:annotation>
+                    <xs:sequence>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Operacion" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Posibles valores: UPSERT, DELETE. UPSERT se utiliza para informar de un alta del elemento a sincronizar o de una modificación sobre dicho elemento. DELETE se utiliza para informar de una baja física del registro.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Pais" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código del país del Objetivo.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Codigo" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código identificativo del Objetivo</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="CodCliente" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>código del cliente al que pertenece el objetivo. Hace referencia al código enviado en el maestro de clientes</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="NombreCorto" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Nombre del Objetivo</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="NombreExtralargo" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Nombre extendido del Objetivo</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="FechaInicioVigencia" type="xs:date">
+                            <xs:annotation>
+                                <xs:documentation>fecha inicio vigencia Objetivo. En caso de no disponer el sistema de una fecha de inicio de vigencia, se usará la fecha de creación</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="FechaFinVigencia" type="xs:date">
+                            <xs:annotation>
+                                <xs:documentation>fecha fin vigencia Objetivo.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="CodigoAjeno" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código ajeno del objetivo</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" ref="ns0:Uniorg">
+                            <xs:annotation>
+                                <xs:documentation>Código de la unidad organizativa. Campo únicamente utilizado para Brasil</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="Delegacion" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Aplica a Latam. Indica el nivel de la estructura al que aplica el objetivo. En caso de Brasil a la subdelegación, en caso de Argentina a la delegación. Hace referencia al código enviado en el maestro de estructura Prosegur</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" ref="ns0:ListadoDireccion">
+                            <xs:annotation>
+                                <xs:documentation>Listado de campos que definen la dirección del Objetivo con atributos nombre/valor. En caso de que el valor del atributo Pais sea “Extranjero” Tibco no informará a Vigia la dirección</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" ref="ns0:ListadoInterlocutores">
+                            <xs:annotation>
+                                <xs:documentation>Listado de interlocutores del cliente</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="EquipoVendedores" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código del equipo de vendedores..Aplica solo a Latam</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="ComercialResponsable" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Nombre del Comercial responsable.Aplica solo a  Latam</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="TelefonoComercial" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Teléfono del comercial. Aplica solo a Latam</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="EmailComercial" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Email del comercial. Aplica solo a Latam</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="InternoComercial" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código interno del comercial. Aplica solo a Latam</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="Latitud" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Coordenadas de Latitud para geolocalizacion </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="Longitud" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Coordenadas de Longitud para geolocalizacion </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="HusoHorario" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Huso horario al que pertenece el objetivo. por ejemplo  'Atlantic/Canary' para Canarias, 'Europe/Madrid' para resto Península. Necesario para enviar a SecLocator</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="CodSubterceroERP" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código del subtercero en el ERP de este objetivo (solo aplica a Europa)</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Secuencial" type="xs:int">
+                            <xs:annotation>
+                                <xs:documentation>Identificador secuencial que sirve para sincronizar el orden de los mensajes entre el sistema emisor y el receptor</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="Estado" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Posibles valores: Activado/Desactivado. Indica si el registro que se envía en un upsert está activado (es un alta o modificación) o está desactivado (es una baja lógica)</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="TipoObjetivo" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>valores “P”otencial o “R”eal </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="PuntoFacturacion" type="xs:boolean">
+                            <xs:annotation>
+                                <xs:documentation>Indica si el objetivo es punto de facturacion del cliente sí o no., Brasil</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="NIF" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>identificador fiscal del objetivo, Brasil</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="DelegacionFacturacion" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Codigo de la Delegacion para Facturacion, Brasil</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="RegistroRegional" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>registro regional del objetivo, Brasil</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="RegistroMunicipal" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>registro municipal del objetivo, Brasil</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" ref="ns0:ListadoParamFacturacion">
+                            <xs:annotation>
+                                <xs:documentation>Listado de parámetros para la facturacion, Brasil</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="ListadoParamFacturacion">
+                <xs:complexType>
+                    <xs:annotation>
+                        <xs:documentation>Listado de parámetros para la facturacion, Brasil</xs:documentation>
+                    </xs:annotation>
+                    <xs:sequence>
+                        <xs:element maxOccurs="1" minOccurs="0" name="ReceptorCorreoDirecto" type="xs:string"/>
+                        <xs:element maxOccurs="1" minOccurs="0" name="DepartamentoCorreoDirecto" type="xs:string"/>
+                        <xs:element maxOccurs="1" minOccurs="0" name="ReceptorCorreo" type="xs:string"/>
+                        <xs:element maxOccurs="1" minOccurs="0" name="NombreResponsable" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="Uniorg">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="1" minOccurs="1" name="codempresa" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código de la empresa</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="coduniorg" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código de la uniorg</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="PuntoServicioRequest">
+                <xs:complexType>
+                    <xs:annotation>
+                        <xs:documentation>Información de un Punto de Servicio perteneciente a un objetivo</xs:documentation>
+                    </xs:annotation>
+                    <xs:sequence>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Operacion" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Posibles valores: UPSERT, DELETE. UPSERT se utiliza para informar de un alta del elemento a sincronizar o de una modificación sobre dicho elemento. DELETE se utiliza para informar de una baja física del registro.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Pais" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código del país al que pertenece el Punto de Servicio</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Codigo" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código identificativo del punto de servicio. El punto de servicio se define unívocamente mediante unión de este código con el de objetivo, cliente y el país.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="CodigoObjetivo" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>código del cliente objetivo al que pertenece el punto de servicio. Hace referencia al código enviado en el maestro de objetivos</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="CodigoCliente" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código del cliente al que pertenece el objetivo. Hace referencia al código enviado en el maestro de clientes</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="Nombre" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Nombre del Punto de servicio</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="FechaInicioVigencia" type="xs:date">
+                            <xs:annotation>
+                                <xs:documentation>Fecha inicio vigencia Punto de Servicio. En caso de no disponer el sistema de una fecha de inicio de vigencia, se usará la fecha de creación</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="FechaFinVigencia" type="xs:date">
+                            <xs:annotation>
+                                <xs:documentation>Fecha fin vigencia Punto de Servicio</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Secuencial" type="xs:int">
+                            <xs:annotation>
+                                <xs:documentation>Identificador secuencial que sirve para sincronizar el orden de los mensajes entre el sistema emisor y el receptor</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="Estado" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Posibles valores: Activado/Desactivado. Indica si el registro que se envía en un upsert está activado (es un alta o modificación) o está desactivado (es una baja lógica)</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="OrdenTrabajoRequest">
+                <xs:complexType>
+                    <xs:annotation>
+                        <xs:documentation>Información de una Orden de Trabajo (OT)</xs:documentation>
+                    </xs:annotation>
+                    <xs:sequence>
+                        <xs:element maxOccurs="1" minOccurs="1" name="MotivoOT" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Indica si se están dando de alta nuevos servicios de una OT (Habilitada) o se están dando de baja servicios de una OT (Baja) o se están modificando los atributos de Empresa prestadora o Delegación prestadora (Modificada)(solo permitido cuando la OT esté Rechazada o No aceptada en Vigia). En Europa este campo indicará a Vigia si se dan de alta los servicios de la OT o se dan de baja, puesto que el campo Operacion Linea vendrá vacío. En Latam será un campo informativo</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Pais" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código del país del que se recibe la OT</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="CodigoOT" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código de la Orden de Trabajo. En Europa este campo junto a País + Código de Contrato + Delegación + Anexo + OT define unívocamente a la OT. En Latam este campo junto a Empresa + tipo de comprobante + serie de numeración + delegación define unívocamente a la OT.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="CodigoOTAnterior" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código de la orden de trabajo de la que proviene. Desde Europa no se informará</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="FechaCreacionOT" type="xs:date">
+                            <xs:annotation>
+                                <xs:documentation>Fecha en la que se creó la OT</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="Origen" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Origen de la OT. Este campo se informará con el valor Operaciones si la OT viene motivada por una solicitud de creación de OT a partir de servicios ya creados en Vigia (mediante el servicio de variación de OT o servicio sin OT). Si no es así, se informará con el valor Comercial</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="Observaciones" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Razones por las cuales se realiza la OT</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" ref="ns0:ListadoEstructuraProsegur">
+                            <xs:annotation>
+                                <xs:documentation>Código de la zona operativa o delegación creadora de la OT. Será el código en ERP. Hace referencia al código enviado en el maestro de estructura Prosegur</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="DelegacionCreadora" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Delegación que crea el contrato anexo (no tiene por qué ser la misma que la creadora de la OT. En Europa es obligatorio puesto que el es parte de los campos que definen unívocamente a la OT. Solo aplica a Europa y será el código SIP2000. Debe ser obligatorio cuando el servicio viene desde SIP2000.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="DelegacionPrestadora" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código de delegación dónde realmente se presta el servicio. Puede no coincidir con la delegación creadora de la OT. Hace referencia al código enviado en el maestro de estructura Prosegur. Se enviará a VIGIA el código unificado, tras haber sido mapeado en la integración</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="TipoComprobante" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código necesario para identificar la OT. Solo aplica a Latam</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="SerieNumeracion" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código necesario para identificar la OT. Solo aplica a Latam</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="Empresa" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código de la empresa que realiza la OT. Será el código en ERP de la empresa. Hace referencia al código enviado en el maestro de Empresas</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="EtapaOT" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Etapa de OT, preventa o Real. Si viene vacío se considera real. La etapa Preventa serviría para hacer simulaciones. La etapa real sería para preparar el servicio. Para Release 1 todas las OTs vendrán con etapa real</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="NumContrato" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Número de contrato. Debe ser obligatorio cuando el servicio viene desde SIP2000</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="Anexo" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código del contrato anexo al que pertenece la OT. Solo aplica a Europa. Debe ser obligatorio cuando el servicio viene desde SIP2000</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="Cliente" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código que identifica al cliente donde se prestan los servicios. Hace referencia al código enviado en el maestro de clientes</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="Objetivo" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código del objetivo donde se prestan los servicios. Hace referencia al código enviado en el maestro de objetivos</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="Subtercero" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código del subtercero donde se prestan los servicios. Aplica a Latam. Hace referencia al código enviado en el maestro de subterceros</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="Subrogacion" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Cambio de proveedor (subrogación). Posibles valores: SI/No</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="codigoMarteNovia" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Este es el campo que contiene el código de la Ot que se guardará para Argentina</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="codigoMarteNoviaAnt" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Este es el campo que guardar el código  Marte/Novia de la Ot anterior para Argentina</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="motivoBaja" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Este es el campo indicar el motivo de la baja ESP/POR</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="descripcionAnexo" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>descripción del Anexo ESP/POR</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="TipoDivision" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>división a la que pertence la OT</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" ref="ns0:ListadoLineasServicioOT">
+                            <xs:annotation>
+                                <xs:documentation>Listado de líneas de servicio (Líneas de esquema operativo)</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" ref="ns0:ListadoPluses">
+                            <xs:annotation>
+                                <xs:documentation>Listado de los beneficios/pluses incluidos en la OT. Aplica a Latam</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" ref="ns0:ListadoMaterialAuxiliarRecepcionOT">
+                            <xs:annotation>
+                                <xs:documentation>Listado con el Material Auxiliar incluido en la OT. Aplica a Latam</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" ref="ns0:ListadoOtrosCostes">
+                            <xs:annotation>
+                                <xs:documentation>Listado de otros costes asociados a la OT (Aplica a Latam)</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" ref="ns0:ListadoConceptosFacturacionOT">
+                            <xs:annotation>
+                                <xs:documentation>Conceptos de facturación por OT. Aplica a Latam</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Secuencial" type="xs:int">
+                            <xs:annotation>
+                                <xs:documentation>Identificador secuencial que sirve para sincronizar el orden de los mensajes entre el sistema emisor y el receptor</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="AutoAceptada" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Indicara S o N. Aplicable a BRA, posible ARG</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="MotivoEspecifico" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Aplicable a BRASIL, habra que discriminar los de tipo 21</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="EmpresaRequest">
+                <xs:complexType>
+                    <xs:annotation>
+                        <xs:documentation>Información de una Empresa del Grupo Prosegur</xs:documentation>
+                    </xs:annotation>
+                    <xs:sequence>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Operacion" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Posibles valores: UPSERT, DELETE. UPSERT se utiliza para informar de un alta del elemento a sincronizar o de una modificación sobre dicho elemento. DELETE se utiliza para informar de una baja física del registro.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Pais" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código del país al que pertenece la empresa</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Codigo" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código identificativo de la empresa. Debe ser el del ERP</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="Descripcion" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Nombre de la empresa</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="FechaAlta" type="xs:date">
+                            <xs:annotation>
+                                <xs:documentation>Fecha de alta de la empresa. Será la fecha de creación del registro en Comercial</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="FechaBaja" type="xs:date">
+                            <xs:annotation>
+                                <xs:documentation>Fecha de baja de la empresa. Será la fecha de eliminación del registro en Comercial</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" ref="ns0:ListadoEstructuraProsegur">
+                            <xs:annotation>
+                                <xs:documentation>Listado de identificadores de la estructura Prosegur (Para España sería un listado de códigos de Delegación y se enviará a VIGIA el código unificado, tras haber sido mapeado en la integración)</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Secuencial" type="xs:int">
+                            <xs:annotation>
+                                <xs:documentation>Identificador secuencial que sirve para sincronizar el orden de los mensajes entre el sistema emisor y el receptor</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="Estado" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Posibles valores: Activado/Desactivado. Indica si el registro que se envía en un upsert está activado (es un alta o modificación) o está desactivado (es una baja lógica)</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="CatalogoServiciosRequest">
+                <xs:complexType>
+                    <xs:annotation>
+                        <xs:documentation>Información sobre el catálogo de servicios que vende Prosegur</xs:documentation>
+                    </xs:annotation>
+                    <xs:sequence>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Operacion" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Posibles valores: UPSERT, DELETE. UPSERT se utiliza para informar de un alta del elemento a sincronizar o de una modificación sobre dicho elemento. DELETE se utiliza para informar de una baja física del registro.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Pais" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código del país para el que aplica el servicio</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="Empresa" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código de la empresa que puede ofrecer el servicio. Será el código ERP. En Europa no se informa este campo. Hace referencia al código enviado en el maestro de empresas</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="TipoServicio" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código del tipo de servicio (correspondiente en Europa al código del maestro de divisiones). Hace referencia al código enviado en el maestro de divisiones</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="DescTipoServicio" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Descripción del tipo de servicio. En Europa no aplica</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Servicio" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código del servicio (correspondiente en Europa al código del maestro de servicios). Hace referencia al código enviado en el maestro de servicios</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="DescServicio" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Descripción del servicio. En Europa no aplica</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" ref="ns0:ListadoCategoriasSalariales">
+                            <xs:annotation>
+                                <xs:documentation>Listado de categorías salariales que pueden prestar el servicio. Aplica a Latam. Hace referencia al código enviado en el maestro de categorías salariales</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Secuencial" type="xs:int">
+                            <xs:annotation>
+                                <xs:documentation>Identificador secuencial que sirve para sincronizar el orden de los mensajes entre el sistema emisor y el receptor</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="Estado" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Posibles valores: Activado/Desactivado. Indica si el registro que se envía en un upsert está activado (es un alta o modificación) o está desactivado (es una baja lógica)</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="TipoDivision" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="ListadoLineasServicioOT">
+                <xs:complexType>
+                    <xs:annotation>
+                        <xs:documentation>Listado de Líneas de servicio de una OT (líneas de esquema operativo)</xs:documentation>
+                    </xs:annotation>
+                    <xs:sequence>
+                        <xs:element maxOccurs="1" minOccurs="0" name="OperacionLinea" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Operación a realizar sobre la línea (únicamente se permiten Alta y Baja). Para España este campo no aplicará, sino que aplicará el motivo a nivel de toda la OT. Para Latam sí que aplicará este campo. Para realizar una modificación sobre la línea, se debe dar una baja (indicando la fecha fin) y posteriormente una alta</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Secuencial" type="xs:int">
+                            <xs:annotation>
+                                <xs:documentation>Código secuencial de cada línea de esquema operativo dentro de la OT.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="NumLinea" type="xs:int">
+                            <xs:annotation>
+                                <xs:documentation>Código secuencial de cada línea de esquema dentro de un contrato</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="FechaInicio" type="xs:date">
+                            <xs:annotation>
+                                <xs:documentation>Fecha y hora de inicio del servicio</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="HoraFechaInicio" type="xs:time">
+                            <xs:annotation>
+                                <xs:documentation>Fecha y hora de inicio del servicio</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="FechaFin" type="xs:date">
+                            <xs:annotation>
+                                <xs:documentation>Fecha y hora de fin del servicio. En caso de que el servicio no tenga fecha de fin fijada no se informará</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="HoraFechaFin" type="xs:time">
+                            <xs:annotation>
+                                <xs:documentation>Fecha y hora de fin del servicio. En caso de que el servicio no tenga fecha de fin fijada no se informará</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="PuntoServicio" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código del punto de servicio donde se prestan los servicios. Hace referencia al código enviado en el maestro de puntos de servicio</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Division" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código del Tipo de servicio prestado. (este campo, junto al código servicio definen en Europa el servicio que se prestará en la línea). Es el código corporativo del ERP. Hace referencia al código enviado en el maestro de divisiones</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Servicio" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código del servicio prestado. Hace referencia al código enviado en el maestro de servicios</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Cantidad" type="xs:int">
+                            <xs:annotation>
+                                <xs:documentation>Cantidad de puestos necesarios en esta línea de esquema</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="CantidadPersonas" type="xs:float">
+                            <xs:annotation>
+                                <xs:documentation>Cantidad de personas necesarias en esta línea de esquema. Aplica solo a Latam</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Tipo" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>RIF o esporádico. Indica si el servicio será continuo (RIF) o tendrá una duración esporádica</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="TipoContratoOT" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Campo que identifica la forma de distribuir el incurrido</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="CategoriaSalarial" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Categoría salarial del puesto: solo aplicable a Argentina, Brasil, Chile y Perú. Hace referencia al código enviado en el maestro de categorías salariales</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="DiasTrabajo" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Campo que define los días de la semana en que se debe prestar el servicio, de lunes a domingo. El formato será un campo con 7 caracteres (ceros o unos). Los unos representan que el día es de trabajo y los ceros que no es de trabajo (se considera que el primer carácter representa el lunes).</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="serviciosAFecha" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>tamaño máximo 31.Servicios a fecha, son 0 y 1 concatenados</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="TipoDia" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Tipos de día en los que se debe prestar servicio. Posibles valores: F(Festivo), T o A (Trabajo o Ambos, son días tanto festivos como hábiles), VF (Víspera de Festivo), H o L (Días Hábiles o Laborables). T y H aplica solamente en Latam, mientras que A y L aplica en Europa.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="Horarios" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Listado con cada uno de los horarios que aplica a esta línea de servicio</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="NumeroHoras" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Número de horas diarias que debe cubrir el servicio, con el siguiente formato: HHMM. En caso de que llegue 0000 se considerará contrato abierto y el usuario de Vigia podrá añadir horas a ese servicio sin necesidad de enviar la OT a Comercial para que sea validada. Puede venir informado o no (en ese caso aplicaría el horario). Ej:1000. Para Latam este campo siempre vendrá informado ya que representa las horas de trabajo por día por empleado para esta línea de servicio (dato utilizado para el motor)</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="TotalHoras" type="xs:float">
+                            <xs:annotation>
+                                <xs:documentation>Número de horas incluidas en la bolsa de horas vendida para la línea de esquema. En Europa no vendrá informado</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="PeriodoHoras" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Indica si las horas de la bolsa de horas son mensuales (M) o anuales (A). En Europa no vendrá informado</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="Escala" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código de la escala de trabajo. Solo aplicable a Argentina, Brasil, Chile y Perú. Hace referencia al código enviado en el maestro de escalas</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="Subescala" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código de la subescala de trabajo. Solo aplicable a Argentina, Chile y Perú. Hace referencia al código enviado en el maestro de subescalas</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" ref="ns0:ListadoHorasPuesto">
+                            <xs:annotation>
+                                <xs:documentation>Listado con los tipos de horas por puesto (aplica a Latam)</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="IntervaloAlmuerzo" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Intervalo de almuerzo. Este atributo aplica únicamente a Brasil y Perú: se indicará para cada línea de la OT si se incluye intervalo de almuerzo (en horas y minutos)</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="AlmuerzoFacturable" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Este atributo aplica únicamente a Perú: se indicará para cada línea de la OT si el periodo de almuerzo es facturable o no</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="TrabajaAlmuerzo" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>trabaja intervalo almuerzo. Este atributo aplica únicamente a Brasil: se indicará para cada línea de la OT si durante el periodo de almuerzo se trabaja o no</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" ref="ns0:ListadoConceptosFacturacionPuesto">
+                            <xs:annotation>
+                                <xs:documentation>Conceptos de facturación por puesto. Aplica a Latam</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="PartTime" type="xs:boolean">
+                            <xs:annotation>
+                                <xs:documentation>(Posible valores: 1(Si) - 0(No)) Aplica a Latam y se envía a nivel informativo (no se utilizará para el motor)</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="FrecuenciaPartTime" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>(Posibles valores: S (Semanal), Q (Quincenal) y M (Mensual)) Aplica a Latam y se envía a nivel informativo (no se utilizará para el motor)</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Facturable" type="xs:boolean">
+                            <xs:annotation>
+                                <xs:documentation>Indica si el servicio es facturable o no</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" ref="ns0:ListadoPagosExtrasPuesto">
+                            <xs:annotation>
+                                <xs:documentation>Opcional a todo el mundo</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="Exclusividad" type="xs:string"/>
+                        <xs:element maxOccurs="1" minOccurs="0" name="TipoHorario" type="xs:string"/>
+                        <xs:element maxOccurs="1" minOccurs="0" name="DuracionRonda">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="5"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="IndPerro" type="xs:string"/>
+                        <xs:element maxOccurs="1" minOccurs="0" name="CodUniforme" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="RelacionCategoriaSalarialEscalaServicioRequest">
+                <xs:complexType>
+                    <xs:annotation>
+                        <xs:documentation>Información sobre todas las relaciones entre Categoría salarial, escala y servicio disponibles en Prosegur.</xs:documentation>
+                    </xs:annotation>
+                    <xs:sequence>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Operacion" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Posibles valores: UPSERT, DELETE. UPSERT se utiliza para informar de un alta de la relación a sincronizar o de una modificación sobre dicha relación. DELETE se utiliza para informar de una baja física de la relación.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Pais" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código del país del que viene la relación (Ej. Argentina = 032)</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="CodCategoriaSalarial" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código de la categoría salarial</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Escala" type="xs:string"/>
+                        <xs:element maxOccurs="1" minOccurs="0" name="Subescala" type="xs:string"/>
+                        <xs:element maxOccurs="1" minOccurs="1" name="CodServicio" type="xs:string"/>
+                        <xs:element maxOccurs="1" minOccurs="0" name="PorcentajeHEEscala" type="xs:float">
+                            <xs:annotation>
+                                <xs:documentation>Porcentaje Hora Extra de escala. Si no viene informado a través de Tibco, VIGIA cargará los valores predeterminados para el país correspondiente</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="PorcentajeHELibreTrabajado" type="xs:float">
+                            <xs:annotation>
+                                <xs:documentation>Porcentaje Hora Extra por libre trabajado. Si no viene informado a través de Tibco, VIGIA cargará los valores predeterminados para el país correspondiente</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="PorcentajeHENocturna" type="xs:float">
+                            <xs:annotation>
+                                <xs:documentation>Porcentaje Hora Extra nocturna. Si no viene informado a través de Tibco, VIGIA cargará los valores predeterminados para el país correspondiente</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="PorcentajeHEEntreJornada" type="xs:float">
+                            <xs:annotation>
+                                <xs:documentation>Porcentaje Hora Extra entre jornada (almuerzo trabajado). Si no viene informado a través de Tibco, VIGIA cargará los valores predeterminados para el país correspondiente</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="PorcentajeHEFestivo" type="xs:float">
+                            <xs:annotation>
+                                <xs:documentation>Porcentaje Hora Extra en festivo. Si no viene informado a través de Tibco, VIGIA cargará los valores predeterminados para el país correspondiente</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="PorcentajeHEEspecial" type="xs:float">
+                            <xs:annotation>
+                                <xs:documentation>Porcentaje Hora Extra especial. Si no viene informado a través de Tibco, VIGIA cargará los valores predeterminados para el país correspondiente</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="HoraInicioAdicionalNocturno" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>El valor de este atributo se enviará en formato horas y minutos (HH:MM).</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="HoraFinAdicionalNocturno" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>El valor de este atributo se enviará en formato horas y minutos (HH:MM).</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="TiempoMinimoAlmuerzo" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>El valor de este atributo se enviará en formato horas y minutos (HH:MM). Si no viene informado a través de Tibco, VIGIA cargará los valores predeterminados para el país correspondiente</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="TipoComputo" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Si no viene informado a través de Tibco, VIGIA cargará los valores predeterminados para el país correspondiente.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="HorasPeriodo" type="xs:float"/>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Secuencial" type="xs:int">
+                            <xs:annotation>
+                                <xs:documentation>Identificador secuencial que sirve para sincronizar el orden de los mensajes entre el sistema emisor y el receptor</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="BolPagaHorasFeriado" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Identificación de horas de pago feriado. Valores S/N. Obligatorio BRA</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="ListadoEscalas">
+                <xs:complexType>
+                    <xs:annotation>
+                        <xs:documentation>Elemento que relaciona una escala y su subescala</xs:documentation>
+                    </xs:annotation>
+                    <xs:sequence>
+                        <xs:element maxOccurs="1" minOccurs="1" name="Escala" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código de la escala</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element maxOccurs="1" minOccurs="0" name="Subescala" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>Código de la subescala. Para Brasil no vendrá informado</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="MaestroEscalasRequest">
+        <wsdl:part element="ns0:MaestroEscalasRequest" name="RequestParam"/>
+    </wsdl:message>
+    <wsdl:message name="MaestroSubescalasRequest">
+        <wsdl:part element="ns0:MaestroSubescalasRequest" name="RequestParam"/>
+    </wsdl:message>
+    <wsdl:message name="CalendarioClienteObjetivoRequest">
+        <wsdl:part element="ns0:CalendarioClienteObjetivoRequest" name="RequestParam"/>
+    </wsdl:message>
+    <wsdl:message name="ObjetivoSubterceroRequest">
+        <wsdl:part element="ns0:ObjetivoSubterceroRequest" name="RequestParam"/>
+    </wsdl:message>
+    <wsdl:message name="EmpresaRequest">
+        <wsdl:part element="ns0:EmpresaRequest" name="RequestParam"/>
+    </wsdl:message>
+    <wsdl:message name="OrdenTrabajoRequest">
+        <wsdl:part element="ns0:OrdenTrabajoRequest" name="RequestParam"/>
+    </wsdl:message>
+    <wsdl:message name="VIGIAReply">
+        <wsdl:part element="ns0:VIGIAReply" name="ReplyParam"/>
+    </wsdl:message>
+    <wsdl:message name="MaestroServiciosRequest">
+        <wsdl:part element="ns0:MaestroServiciosRequest" name="RequestParam"/>
+    </wsdl:message>
+    <wsdl:message name="ClienteRequest">
+        <wsdl:part element="ns0:ClienteRequest" name="RequestParam"/>
+    </wsdl:message>
+    <wsdl:message name="MaestroDivisionesRequest">
+        <wsdl:part element="ns0:MaestroDivisionesRequest" name="RequestParam"/>
+    </wsdl:message>
+    <wsdl:message name="PuntoServicioRequest">
+        <wsdl:part element="ns0:PuntoServicioRequest" name="RequestParam"/>
+    </wsdl:message>
+    <wsdl:message name="CatalogoServiciosRequest">
+        <wsdl:part element="ns0:CatalogoServiciosRequest" name="RequestParam"/>
+    </wsdl:message>
+    <wsdl:message name="EstructuraProsegurRequest">
+        <wsdl:part element="ns0:EstructuraProsegurRequest" name="RequestParam"/>
+    </wsdl:message>
+    <wsdl:message name="MaestroSectorRequest">
+        <wsdl:part element="ns0:MaestroSectorRequest" name="RequestParam"/>
+    </wsdl:message>
+    <wsdl:message name="GrupoClienteRequest">
+        <wsdl:part element="ns0:GrupoClienteRequest" name="RequestParam"/>
+    </wsdl:message>
+    <wsdl:message name="ObjetivoRequest">
+        <wsdl:part element="ns0:ObjetivoRequest" name="RequestParam"/>
+    </wsdl:message>
+    <wsdl:message name="RelacionCategoriaSalarialEscalaServicioRequest">
+        <wsdl:part element="ns0:RelacionCategoriaSalarialEscalaServicioRequest" name="RequestParam"/>
+    </wsdl:message>
+    <wsdl:portType name="WS-VIGIA-COMERCIAL-Input-portType">
+        <wsdl:operation name="MaestroSubescalas">
+            <wsdl:input message="tns:MaestroSubescalasRequest" name="MaestroSubescalasRequest"/>
+            <wsdl:output message="tns:VIGIAReply" name="VigiaReply"/>
+        </wsdl:operation>
+        <wsdl:operation name="MaestroEscalas">
+            <wsdl:input message="tns:MaestroEscalasRequest" name="MaestroEscalasRequest"/>
+            <wsdl:output message="tns:VIGIAReply" name="VigiaReply"/>
+        </wsdl:operation>
+        <wsdl:operation name="CalendarioClienteObjetivo">
+            <wsdl:input message="tns:CalendarioClienteObjetivoRequest" name="CalendarioClienteObjetivoRequest"/>
+            <wsdl:output message="tns:VIGIAReply" name="VigiaReply"/>
+        </wsdl:operation>
+        <wsdl:operation name="ObjetivoSubtercero">
+            <wsdl:input message="tns:ObjetivoSubterceroRequest" name="ObjetivoSubterceroRequest"/>
+            <wsdl:output message="tns:VIGIAReply" name="VigiaReply"/>
+        </wsdl:operation>
+        <wsdl:operation name="RelacionCategoriaSalarialEscalaServicio">
+            <wsdl:input message="tns:RelacionCategoriaSalarialEscalaServicioRequest" name="RelacionCategoriaSalarialEscalaServicioRequest"/>
+            <wsdl:output message="tns:VIGIAReply" name="VigiaReply"/>
+        </wsdl:operation>
+        <wsdl:operation name="GrupoCliente">
+            <wsdl:input message="tns:GrupoClienteRequest" name="GrupoClienteRequest"/>
+            <wsdl:output message="tns:VIGIAReply" name="VigiaReply"/>
+        </wsdl:operation>
+        <wsdl:operation name="Cliente">
+            <wsdl:input message="tns:ClienteRequest" name="ClienteRequest"/>
+            <wsdl:output message="tns:VIGIAReply" name="VigiaReply"/>
+        </wsdl:operation>
+        <wsdl:operation name="Objetivo">
+            <wsdl:input message="tns:ObjetivoRequest" name="ObjetivoRequest"/>
+            <wsdl:output message="tns:VIGIAReply" name="VigiaReply"/>
+        </wsdl:operation>
+        <wsdl:operation name="PuntoServicio">
+            <wsdl:input message="tns:PuntoServicioRequest" name="PuntoServicioRequest"/>
+            <wsdl:output message="tns:VIGIAReply" name="VigiaReply"/>
+        </wsdl:operation>
+        <wsdl:operation name="MaestroSector">
+            <wsdl:input message="tns:MaestroSectorRequest" name="MaestroSectorRequest"/>
+            <wsdl:output message="tns:VIGIAReply" name="VigiaReply"/>
+        </wsdl:operation>
+        <wsdl:operation name="OrdenTrabajo">
+            <wsdl:input message="tns:OrdenTrabajoRequest" name="OrdenTrabajoRequest"/>
+            <wsdl:output message="tns:VIGIAReply" name="VigiaReply"/>
+        </wsdl:operation>
+        <wsdl:operation name="Empresa">
+            <wsdl:input message="tns:EmpresaRequest" name="EmpresaRequest"/>
+            <wsdl:output message="tns:VIGIAReply" name="VigiaReply"/>
+        </wsdl:operation>
+        <wsdl:operation name="EstructuraProsegur">
+            <wsdl:input message="tns:EstructuraProsegurRequest" name="EstructuraProsegurRequest"/>
+            <wsdl:output message="tns:VIGIAReply" name="VigiaReply"/>
+        </wsdl:operation>
+        <wsdl:operation name="CatalogoServicios">
+            <wsdl:input message="tns:CatalogoServiciosRequest" name="CatalogoServiciosRequest"/>
+            <wsdl:output message="tns:VIGIAReply" name="VigiaReply"/>
+        </wsdl:operation>
+        <wsdl:operation name="MaestroDivisiones">
+            <wsdl:input message="tns:MaestroDivisionesRequest" name="MaestroDivisionesRequest"/>
+            <wsdl:output message="tns:VIGIAReply" name="VigiaReply"/>
+        </wsdl:operation>
+        <wsdl:operation name="MaestroServicios">
+            <wsdl:input message="tns:MaestroServiciosRequest" name="MaestroServiciosRequest"/>
+            <wsdl:output message="tns:VIGIAReply" name="VigiaReply"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="WS-VIGIA-COMERCIAL-Input-binding" type="tns:WS-VIGIA-COMERCIAL-Input-portType">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="RelacionCategoriaSalarialEscalaServicio">
+            <soap:operation soapAction="/RelacionCategoriaSalarialEscalaServicio" style="document"/>
+            <wsdl:input name="RelacionCategoriaSalarialEscalaServicioRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="VigiaReply">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="MaestroEscalas">
+            <soap:operation soapAction="/MaestroEscalas" style="document"/>
+            <wsdl:input name="MaestroEscalasRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="VigiaReply">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="MaestroSubescalas">
+            <soap:operation soapAction="/MaestroSubescalas" style="document"/>
+            <wsdl:input name="MaestroSubescalasRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="VigiaReply">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="CalendarioClienteObjetivo">
+            <soap:operation soapAction="/CalendarioClienteObjetivo" style="document"/>
+            <wsdl:input name="CalendarioClienteObjetivoRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="VigiaReply">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ObjetivoSubtercero">
+            <soap:operation soapAction="/ObjetivoSubtercero" style="document"/>
+            <wsdl:input name="ObjetivoSubterceroRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="VigiaReply">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GrupoCliente">
+            <soap:operation soapAction="/GrupoCliente" style="document"/>
+            <wsdl:input name="GrupoClienteRequest">
+                <soap:body parts="RequestParam" use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="VigiaReply">
+                <soap:body parts="ReplyParam" use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="Cliente">
+            <soap:operation soapAction="/Cliente" style="document"/>
+            <wsdl:input name="ClienteRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="VigiaReply">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="Objetivo">
+            <soap:operation soapAction="/Objetivo" style="document"/>
+            <wsdl:input name="ObjetivoRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="VigiaReply">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="PuntoServicio">
+            <soap:operation soapAction="/PuntoServicio" style="document"/>
+            <wsdl:input name="PuntoServicioRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="VigiaReply">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="MaestroSector">
+            <soap:operation soapAction="/MaestroSector" style="document"/>
+            <wsdl:input name="MaestroSectorRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="VigiaReply">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="OrdenTrabajo">
+            <soap:operation soapAction="/OrdenTrabajo" style="document"/>
+            <wsdl:input name="OrdenTrabajoRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="VigiaReply">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="Empresa">
+            <soap:operation soapAction="/Empresa" style="document"/>
+            <wsdl:input name="EmpresaRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="VigiaReply">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="EstructuraProsegur">
+            <soap:operation soapAction="/EstructuraProsegur" style="document"/>
+            <wsdl:input name="EstructuraProsegurRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="VigiaReply">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="CatalogoServicios">
+            <soap:operation soapAction="/CatalogoServicios" style="document"/>
+            <wsdl:input name="CatalogoServiciosRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="VigiaReply">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="MaestroDivisiones">
+            <soap:operation soapAction="/MaestroDivisiones" style="document"/>
+            <wsdl:input name="MaestroDivisionesRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="VigiaReply">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="MaestroServicios">
+            <soap:operation soapAction="/MaestroServicios" style="document"/>
+            <wsdl:input name="MaestroServiciosRequest">
+                <soap:body parts="RequestParam" use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="VigiaReply">
+                <soap:body parts="ReplyParam" use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="WSDL-VIGIA-COMERCIAL-Input-service">
+        <wsdl:port binding="tns:WS-VIGIA-COMERCIAL-Input-binding" name="WS-VIGIA-COMERCIAL-Input-Port">
+            <soap:address location="http://localhost:53472/VIGIA-COMERCIAL-INPUT.svc"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

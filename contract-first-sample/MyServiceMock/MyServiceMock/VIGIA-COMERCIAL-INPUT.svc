@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="MyServiceMock.VIGIA_COMERCIAL_INPUT" CodeBehind="VIGIA-COMERCIAL-INPUT.svc.cs" %>
