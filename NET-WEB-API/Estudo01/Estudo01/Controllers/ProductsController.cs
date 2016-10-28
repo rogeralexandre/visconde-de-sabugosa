@@ -32,15 +32,31 @@ namespace Estudo01.Controllers
             return Ok(product);
         }
 
-        public HttpResponseMessage PostProduct(Product item)
+        //public HttpResponseMessage PostProduct(Product item)
+        //{
+        //    Listproducts.Add(item);
+     
+        //    var response = Request.CreateResponse<Product>(HttpStatusCode.Created, item);
+        //    string uri = Url.Link("DefaultApi", new { id = item.Id });
+        //    response.Headers.Location = new Uri(uri);
+
+        //    return response;
+        //}
+
+        public IHttpActionResult PostProduct(Product item)
         {
             Listproducts.Add(item);
-     
-            var response = Request.CreateResponse<Product>(HttpStatusCode.Created, item);
-            string uri = Url.Link("DefaultApi", new { id = item.Id });
-            response.Headers.Location = new Uri(uri);
 
-            return response;
+            string uri = Url.Link("DefaultApi", new { id = item.Id });
+
+            return Created(uri, item);
+        }
+
+        public IHttpActionResult PutProduct(int id, Product item)
+        {
+            Listproducts.Find(x => x.Id == id);
+            Listproducts.
+            return Ok(item);
         }
     }
 }
