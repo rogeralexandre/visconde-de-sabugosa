@@ -54,8 +54,8 @@ namespace Estudo01.Controllers
 
         public IHttpActionResult PutProduct(int id, Product item)
         {
-            Listproducts.Find(x => x.Id == id);
-            Listproducts.
+            Product ProdutoEncontrado = Listproducts.Find(x => x.Id == id);
+            Listproducts.Remove(ProdutoEncontrado);
             return Ok(item);
         }
     }
