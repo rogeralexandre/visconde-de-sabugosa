@@ -54,9 +54,21 @@ namespace Estudo01.Controllers
 
         public IHttpActionResult PutProduct(int id, Product item)
         {
+            //Product ProdutoEncontrado = Listproducts.Find(x => x.Id == id);
             Product ProdutoEncontrado = Listproducts.Find(x => x.Id == id);
             Listproducts.Remove(ProdutoEncontrado);
+            Listproducts.Add(item);
             return Ok(item);
+        }
+
+        public void DeleteProduct(int id)
+        {
+            // segundo este artigo https://www.asp.net/web-api/overview/getting-started-with-aspnet-web-api/action-results
+            // para eu retornar o DELETE com NO CONTENT tenho que declarar o método com o retorno VOID
+            // Se eu utilizar o IHttpActionResult deverei obrigatoriamente retornar OK + a entidade 
+            Product ProdutoEncontrado = Listproducts.Find(x => x.Id == id);
+            Listproducts.Remove(ProdutoEncontrado);
+            
         }
     }
 }
