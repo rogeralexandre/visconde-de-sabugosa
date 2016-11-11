@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿// ROGER
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ContosoUniversity.Models
