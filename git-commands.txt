@@ -1,0 +1,11 @@
+git config --global http.proxy http://brx0000097:urbana04@proxyinternetlpa.latam2.prosegur.local:80
+
+
+[FONTE: https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes]
+
+* To see which remote servers you have configured, you can run the git remote command. 
+$ git remote -v
+
+* When you have your project at a point that you want to share, you have to push it upstream.
+git push [remote-name] [branch-name]
+
