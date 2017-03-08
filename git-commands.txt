@@ -1,6 +1,9 @@
 git config --global http.proxy http://brx0000097:urbana04@proxyinternetlpa.latam2.prosegur.local:80
 
 
+git clone [url-do-repo]
+(não é necessário criar a pasta)
+
 [FONTE: https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes]
 
 * To see which remote servers you have configured, you can run the git remote command. 
@@ -8,4 +11,12 @@ $ git remote -v
 
 * When you have your project at a point that you want to share, you have to push it upstream.
 git push [remote-name] [branch-name]
+
+
+** baixar do MASTER para o BRANCH que acabei de criar.
+git checkout [branch name]
+git pull origin master
+
+** apagar branch (depois de atualizada)
+git branch --delete <nome-branch>
 
