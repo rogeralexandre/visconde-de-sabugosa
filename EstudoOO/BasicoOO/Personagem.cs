@@ -75,6 +75,15 @@ namespace BasicoOO
             return false;
         }
 
+        //GetHashCode
+        public override int GetHashCode()
+        {
+            // usando o atributo de quantidade de cogumelos
+            int result = 11;
+            result = 43 * result + quantidadeDeCogumelos; // quantidade de cogumelos é int então se enquadra na regra 2 do livro (página 63)
+
+            return result;
+        }
     }
 
     class Cogumelo

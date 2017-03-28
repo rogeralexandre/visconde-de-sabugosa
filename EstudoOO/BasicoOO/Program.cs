@@ -21,6 +21,7 @@ namespace BasicoOO
 
             Personagem personagem2 = new Personagem();
 
+            // USO DE EQUALS
             if (personagem.Equals(personagem2))
             {
                 Console.WriteLine("Os dois personagens são iguais.");
@@ -39,6 +40,15 @@ namespace BasicoOO
             {
                 Console.WriteLine("Os personagens ainda são diferentes.");
             }
+
+            // USO DE HASHCODE.
+            Console.WriteLine("");
+            Console.WriteLine("Retornando o valor do hashcode da baseado na quantidade de cogumelos");
+            Console.WriteLine("Para quantidade de cogumelos igual a {0}: {1}", personagem.QuantidadeDeCogumelos, personagem.GetHashCode());
+            personagem.QuantidadeDeCogumelos = 2;
+            Console.WriteLine("Para quantidade de cogumelos igual a {0}: {1}", personagem.QuantidadeDeCogumelos, personagem.GetHashCode());
+            personagem.QuantidadeDeCogumelos = 10;
+            Console.WriteLine("Para quantidade de cogumelos igual a {0}: {1}", personagem.QuantidadeDeCogumelos, personagem.GetHashCode());
 
             Console.WriteLine("Pressione qualquer tecla para continuar.");
             Console.ReadKey();
