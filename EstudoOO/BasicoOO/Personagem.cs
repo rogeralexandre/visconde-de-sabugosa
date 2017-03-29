@@ -84,6 +84,12 @@ namespace BasicoOO
 
             return result;
         }
+
+        //Representação padrão do objeto ToString()
+        public override string ToString()
+        {
+            return "Nome:" + nome + " Cor: " + cor;
+        }
     }
 
     class Cogumelo

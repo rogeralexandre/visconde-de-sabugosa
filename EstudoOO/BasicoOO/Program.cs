@@ -50,6 +50,11 @@ namespace BasicoOO
             personagem.QuantidadeDeCogumelos = 10;
             Console.WriteLine("Para quantidade de cogumelos igual a {0}: {1}", personagem.QuantidadeDeCogumelos, personagem.GetHashCode());
 
+            // USO DE REPRESENTAÇÃO PADRÃO
+            Console.WriteLine("Personagem 1: " + personagem.ToString());
+            Console.WriteLine("Personagem 2: " + personagem2.ToString());
+
+            Console.WriteLine("");
             Console.WriteLine("Pressione qualquer tecla para continuar.");
             Console.ReadKey();
         }
