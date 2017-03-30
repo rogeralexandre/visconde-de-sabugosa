@@ -50,7 +50,12 @@ namespace BasicoOO
 
         void PegarCogumelo(Cogumelo cogumelo)
         {
+            
+        }
 
+        string PegarCogumelo()
+        {
+            return Cogumelo.Tipo;
         }
 
         Bolafogo AtirarFogo()
@@ -88,13 +93,15 @@ namespace BasicoOO
         //Representação padrão do objeto ToString()
         public override string ToString()
         {
-            return "Nome:" + nome + " Cor: " + cor;
+            return "Nome:" + nome + " Cor: " + cor + "Cogumelo permitido:" + this.PegarCogumelo();
         }
     }
 
     class Cogumelo
     {
-
+        // USO de STATIC
+        public static String Tipo = "crescer";
+                
     }
 
     class Bolafogo
