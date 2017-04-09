@@ -93,7 +93,7 @@ namespace BasicoOO
         //Representação padrão do objeto ToString()
         public override string ToString()
         {
-            return "Nome:" + nome + " Cor: " + cor + "Cogumelo permitido:" + this.PegarCogumelo();
+            return "Nome:" + nome + " Cor: " + cor + " Cogumelo permitido:" + this.PegarCogumelo();
         }
     }
 

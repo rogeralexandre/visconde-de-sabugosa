@@ -52,7 +52,13 @@ namespace BasicoOO
 
             // USO DE REPRESENTAÇÃO PADRÃO
             Console.WriteLine("Personagem 1: " + personagem.ToString());
+            personagem2.Cor = "branco (fire)";
+            
             Console.WriteLine("Personagem 2: " + personagem2.ToString());
+
+
+            Console.WriteLine("USO DE STATIC");
+            Console.WriteLine("Tipo do cogumelo (sem instanciar):" + Cogumelo.Tipo);
 
             Console.WriteLine("");
             Console.WriteLine("Pressione qualquer tecla para continuar.");
