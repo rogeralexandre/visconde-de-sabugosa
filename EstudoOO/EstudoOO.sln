@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26228.9
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicoOO", "BasicoOO\BasicoOO.csproj", "{E66ED496-4CA1-4148-B6D2-A7B50E61EC5D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConceitosRelacionais", "ConceitosRelacionais\ConceitosRelacionais.csproj", "{C650E3B1-4FD5-45F3-AA79-3F7FA7E0F06E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{E66ED496-4CA1-4148-B6D2-A7B50E61EC5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E66ED496-4CA1-4148-B6D2-A7B50E61EC5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E66ED496-4CA1-4148-B6D2-A7B50E61EC5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C650E3B1-4FD5-45F3-AA79-3F7FA7E0F06E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C650E3B1-4FD5-45F3-AA79-3F7FA7E0F06E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C650E3B1-4FD5-45F3-AA79-3F7FA7E0F06E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C650E3B1-4FD5-45F3-AA79-3F7FA7E0F06E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BasicoOO
 {
@@ -39,13 +35,13 @@ namespace BasicoOO
         // método construtor
         public Personagem()
         {
-
+            altura = 0.7F;
         }
 
         // métodos
-        void Pular()
+        public String Pular()
         {
-
+            return this.nome + " pulou!";
         }
 
         void PegarCogumelo(Cogumelo cogumelo)
@@ -93,7 +89,7 @@ namespace BasicoOO
         //Representação padrão do objeto ToString()
         public override string ToString()
         {
-            return "Nome:" + nome + " Cor: " + cor + " Cogumelo permitido:" + this.PegarCogumelo();
+            return "Nome:" + nome + " Cor: " + cor + " Tipo físico: " + tipoFisico + " Cogumelo permitido:" + this.PegarCogumelo();
         }
     }
 
@@ -106,7 +102,7 @@ namespace BasicoOO
 
     class Bolafogo
     {
-
+        
     }
 }
     

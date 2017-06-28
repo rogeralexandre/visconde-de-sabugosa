@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BasicoOO
 {
@@ -10,19 +6,31 @@ namespace BasicoOO
     {
         static void Main(string[] args)
         {
-            Personagem personagem = new Personagem();
+            Personagem mario = new Personagem();
 
-            personagem.PossuiBigode = true;
-            personagem.Altura = 1.5F;
-            personagem.QuantidadeDeCogumelos = 0;
-            personagem.TipoFisico = "parece um encanador italiano";
-            personagem.Nome = "Mario";
-            personagem.Cor = "Vermelho";
+            mario.PossuiBigode = true;
+            mario.Altura = 1.5F;
+            mario.QuantidadeDeCogumelos = 0;
+            mario.TipoFisico = "parece um encanador italiano";
+            mario.Nome = "Mario";
+            mario.Cor = "Vermelho";
 
-            Personagem personagem2 = new Personagem();
+            Personagem luigi = new Personagem();
+
+            luigi.Nome = "Luigi";
+            luigi.Cor = "Verde";
+            luigi.QuantidadeDeCogumelos = 0;
+            luigi.Altura = 1.80F;
+            luigi.TipoFisico = "magro";
+            luigi.PossuiBigode = true;
+
+            Console.WriteLine(mario.Pular());
+
+            Console.WriteLine(luigi.Pular());
+
 
             // USO DE EQUALS
-            if (personagem.Equals(personagem2))
+            if (mario.Equals(luigi))
             {
                 Console.WriteLine("Os dois personagens são iguais.");
             }
@@ -31,8 +39,8 @@ namespace BasicoOO
                 Console.WriteLine("Os personagens são diferentes.");
             }
 
-            personagem2.Nome = personagem.Nome;
-            if (personagem.Equals(personagem2))
+            luigi.Nome = mario.Nome;
+            if (mario.Equals(luigi))
             {
                 Console.WriteLine("Agora os dois personagens são iguais.");
             }
@@ -44,17 +52,17 @@ namespace BasicoOO
             // USO DE HASHCODE.
             Console.WriteLine("");
             Console.WriteLine("Retornando o valor do hashcode da baseado na quantidade de cogumelos");
-            Console.WriteLine("Para quantidade de cogumelos igual a {0}: {1}", personagem.QuantidadeDeCogumelos, personagem.GetHashCode());
-            personagem.QuantidadeDeCogumelos = 2;
-            Console.WriteLine("Para quantidade de cogumelos igual a {0}: {1}", personagem.QuantidadeDeCogumelos, personagem.GetHashCode());
-            personagem.QuantidadeDeCogumelos = 10;
-            Console.WriteLine("Para quantidade de cogumelos igual a {0}: {1}", personagem.QuantidadeDeCogumelos, personagem.GetHashCode());
+            Console.WriteLine("Para quantidade de cogumelos igual a {0}: {1}", mario.QuantidadeDeCogumelos, mario.GetHashCode());
+            mario.QuantidadeDeCogumelos = 2;
+            Console.WriteLine("Para quantidade de cogumelos igual a {0}: {1}", mario.QuantidadeDeCogumelos, mario.GetHashCode());
+            mario.QuantidadeDeCogumelos = 10;
+            Console.WriteLine("Para quantidade de cogumelos igual a {0}: {1}", mario.QuantidadeDeCogumelos, mario.GetHashCode());
 
             // USO DE REPRESENTAÇÃO PADRÃO
-            Console.WriteLine("Personagem 1: " + personagem.ToString());
-            personagem2.Cor = "branco (fire)";
+            Console.WriteLine("Personagem 1: " + mario.ToString());
+            luigi.Cor = "branco (fire)";
             
-            Console.WriteLine("Personagem 2: " + personagem2.ToString());
+            Console.WriteLine("Personagem 2: " + luigi.ToString());
 
 
             Console.WriteLine("USO DE STATIC");
